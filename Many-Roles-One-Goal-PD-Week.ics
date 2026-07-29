@@ -1,0 +1,329 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Berea College//Many Roles One Goal PD Week//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:mon-welcome-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260810T084500
+DTEND;TZID=America/New_York:20260810T091500
+SUMMARY:Welcome
+LOCATION:BT Events Center
+DESCRIPTION:Led by Mary Robert Garrett & Sarah Adams\, with support from the college president and other AC members.
+END:VEVENT
+BEGIN:VEVENT
+UID:mon-acspeed-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260810T091500
+DTEND;TZID=America/New_York:20260810T103000
+SUMMARY:AC Speed Dating
+LOCATION:BT Events Center
+DESCRIPTION:Led by Mary Robert Garrett & Collis Robinson\, with support from other college AC members.
+END:VEVENT
+BEGIN:VEVENT
+UID:mon-newstudents-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260810T103000
+DTEND;TZID=America/New_York:20260810T114500
+SUMMARY:Getting to Know Our Newest Students
+LOCATION:BT Events Center
+DESCRIPTION:Led by Luke Hodson & Jessica Pena.
+END:VEVENT
+BEGIN:VEVENT
+UID:mon-lunch-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260810T114500
+DTEND;TZID=America/New_York:20260810T130000
+SUMMARY:Lunch — at Tavern
+LOCATION:Tavern
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+UID:mon-firstweeks-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260810T130000
+DTEND;TZID=America/New_York:20260810T140000
+SUMMARY:The First Two Weeks of Class
+LOCATION:Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by Joe Murphy. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:mon-scholarship-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260810T130000
+DTEND;TZID=America/New_York:20260810T140000
+SUMMARY:Scholarship: Grant Applications & Sabbatical Planning
+LOCATION:Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by Mary Robert Garrett & Jenny Akins. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:mon-wls-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260810T130000
+DTEND;TZID=America/New_York:20260810T140000
+SUMMARY:Getting to Know WLS
+LOCATION:Legacy Hall
+DESCRIPTION:Led by (TBD). Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:mon-aiworkflow-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260810T130000
+DTEND;TZID=America/New_York:20260810T140000
+SUMMARY:AI & Workflow
+LOCATION:Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by Rob Smith. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:tue-frank-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260811T084500
+DTEND;TZID=America/New_York:20260811T104500
+SUMMARY:Frank Welcome & Network of Care
+LOCATION:BT Events Center
+DESCRIPTION:Led by Frank Cirionni.
+END:VEVENT
+BEGIN:VEVENT
+UID:tue-disability-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260811T104500
+DTEND;TZID=America/New_York:20260811T111500
+SUMMARY:Disability & Accessibility
+LOCATION:BT Events Center
+DESCRIPTION:Led by Holly Hatfield.
+END:VEVENT
+BEGIN:VEVENT
+UID:tue-titleix-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260811T111500
+DTEND;TZID=America/New_York:20260811T114500
+SUMMARY:Title IX
+LOCATION:BT Events Center
+DESCRIPTION:Led by Jocelyn Glover.
+END:VEVENT
+BEGIN:VEVENT
+UID:tue-lunch-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260811T114500
+DTEND;TZID=America/New_York:20260811T130000
+SUMMARY:Lunch & WLS Keynote
+LOCATION:BT Events Center
+DESCRIPTION:Led by Collis Robinson.
+END:VEVENT
+BEGIN:VEVENT
+UID:tue-assessment-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260811T130000
+DTEND;TZID=America/New_York:20260811T140000
+SUMMARY:Assessment: How Do I Know If It's Working?
+LOCATION:Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by Rob Smith & Clara Chapman. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:tue-irb-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260811T130000
+DTEND;TZID=America/New_York:20260811T140000
+SUMMARY:IRB Approval & Process
+LOCATION:Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by Dee Hill-Zuganelli & Mary Robert Garrett. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:tue-itshowcase-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260811T130000
+DTEND;TZID=America/New_York:20260811T140000
+SUMMARY:IT Showcase: Emerging Technology in the Classroom
+LOCATION:Draper 100 or Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by John Hargrave. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-deptchairs-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T084500
+DTEND;TZID=America/New_York:20260812T114500
+SUMMARY:Department Chairs Meeting
+LOCATION:BT Events Center
+DESCRIPTION:Led by Mary Robert Garrett. Department chairs only. Concurrent session — choose one 8:45 AM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-nutsbolts-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T084500
+DTEND;TZID=America/New_York:20260812T114500
+SUMMARY:Nuts & Bolts: Work College Program Supervision
+LOCATION:Legacy Hall
+DESCRIPTION:Led by Collis Robinson & Tuyet Nguyen. Concurrent session — choose one 8:45 AM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-consulting-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T084500
+DTEND;TZID=America/New_York:20260812T120000
+SUMMARY:Partnership Consulting Hours
+LOCATION:Various campus locations — see agenda for full list
+DESCRIPTION:Visit with consultants from the Library\, Faculty Development\, the Art Gallery\, Folklife\, Internships & Career Development\, Philanthropy\, Grants\, and Continuous Improvement. Concurrent session — choose one 8:45 AM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-lunchsup-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T114500
+DTEND;TZID=America/New_York:20260812T130000
+SUMMARY:Lunch for Work College Program Supervisors
+LOCATION:Legacy Building
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-lunchchairs-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T114500
+DTEND;TZID=America/New_York:20260812T130000
+SUMMARY:Lunch for Department Chairs
+LOCATION:Alumni Building\, Hutchins Dining Room
+DESCRIPTION:Sign in upon entry to dining services.
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-superrefresh-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T130000
+DTEND;TZID=America/New_York:20260812T140000
+SUMMARY:Continuing Supervisors Refresh
+LOCATION:Legacy Building
+DESCRIPTION:Led by Brittany Ash & Armando Buenrostro. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-trainingai-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T130000
+DTEND;TZID=America/New_York:20260812T140000
+SUMMARY:Training Your AI
+LOCATION:Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by Rob Smith. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-bist-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T130000
+DTEND;TZID=America/New_York:20260812T140000
+SUMMARY:International: Drafting a BIST Proposal
+LOCATION:Emery
+DESCRIPTION:Led by CIE Staff. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:wed-tenure-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260812T130000
+DTEND;TZID=America/New_York:20260812T140000
+SUMMARY:Tenure & Promotion Portfolio Prep
+LOCATION:Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by Mary Robert Garrett. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:thu-tjwelcome-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260813T084500
+DTEND;TZID=America/New_York:20260813T094500
+SUMMARY:TJ Welcome & Community Session
+LOCATION:BT Events Center
+DESCRIPTION:Led by TJ Albritton & Erica Woods.
+END:VEVENT
+BEGIN:VEVENT
+UID:thu-counseling-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260813T094500
+DTEND;TZID=America/New_York:20260813T103000
+SUMMARY:Counseling Services
+LOCATION:BT Events Center
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+UID:thu-nest-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260813T103000
+DTEND;TZID=America/New_York:20260813T114500
+SUMMARY:Introducing the NEST
+LOCATION:BT Events Center
+DESCRIPTION:Led by Tréon McClendon & Katie Stewart.
+END:VEVENT
+BEGIN:VEVENT
+UID:thu-lunch-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260813T114500
+DTEND;TZID=America/New_York:20260813T130000
+SUMMARY:Lunch
+LOCATION:BT Events Center
+DESCRIPTION:Hosted by Internships & Career Development.
+END:VEVENT
+BEGIN:VEVENT
+UID:thu-library-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260813T130000
+DTEND;TZID=America/New_York:20260813T140000
+SUMMARY:Library Resources & Instruction
+LOCATION:Library
+DESCRIPTION:Led by Library staff. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:thu-wlsoutcomes-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260813T130000
+DTEND;TZID=America/New_York:20260813T140000
+SUMMARY:WLS Learning Outcomes
+LOCATION:Legacy Building
+DESCRIPTION:Led by Tuyet Nguyen & Brad Powell. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:thu-advising-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260813T130000
+DTEND;TZID=America/New_York:20260813T140000
+SUMMARY:One Voice\, One Vision: Building a Unified Advising Experience
+LOCATION:Emery\, 1st Floor (follow signs)
+DESCRIPTION:Led by Mary Robert Garrett & Tréon McClendon. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:thu-aiwork-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260813T130000
+DTEND;TZID=America/New_York:20260813T140000
+SUMMARY:AI & Work
+LOCATION:Legacy Hall
+DESCRIPTION:Led by Steve Albritton\, AI Integration Specialist. Concurrent session — choose one 1:00 PM option.
+END:VEVENT
+BEGIN:VEVENT
+UID:fri-coge-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260814T084500
+DTEND;TZID=America/New_York:20260814T100000
+SUMMARY:Help Set COGE's Agenda
+LOCATION:Hutchins Library Flex
+DESCRIPTION:Led by Sarah Adams.
+END:VEVENT
+BEGIN:VEVENT
+UID:fri-li100-pdweek2026@berea.edu
+DTSTAMP:20260728T000000Z
+DTSTART;TZID=America/New_York:20260814T100000
+DTEND;TZID=America/New_York:20260814T110000
+SUMMARY:L&I 100
+LOCATION:Hutchins Library Flex
+DESCRIPTION:Led by Sarah Adams.
+END:VEVENT
+END:VCALENDAR
