@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Many Roles, One Goal — PD Week Agenda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,500&family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=Google+Sans+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --berea-blue:#004175;
+    --light-blue:#49B4EF;
+    --bright-blue:#76E2FF;
+    --blue-gray:#8AAAC5;
+    --chartreuse:#D2DE26;
+    --green:#7D9D1E;
+    --gray:#D9D9D4;
+    --black:#000000;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--black);
+    font-family:'Barlow', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* ---------- HEADER ---------- */
+  .hero{
+    position:relative;
+    background:var(--berea-blue);
+    color:var(--white);
+    padding:64px 32px 48px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero svg.tower{
+    position:absolute;
+    bottom:-10px;
+    opacity:0.16;
+  }
+  .tower-left{left:-40px; height:210px;}
+  .tower-right{right:-40px; height:210px; transform:scaleX(-1);}
+  .hero .eyebrow{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--bright-blue);
+    margin:0 0 18px;
+  }
+  .hero h1{
+    font-family:'Newsreader', serif;
+    font-optical-sizing:auto;
+    font-weight:600;
+    font-size:clamp(34px,5vw,58px);
+    line-height:1.08;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .hero .rule{
+    width:64px;height:3px;background:var(--chartreuse);
+    margin:22px auto;border:none;
+  }
+  .hero .sub{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:600;
+    letter-spacing:0.06em;
+    font-size:18px;
+    color:var(--white);
+    margin:0 0 4px;
+  }
+  .hero .sub2{
+    font-size:14px;
+    color:var(--blue-gray);
+    max-width:640px;
+    margin:14px auto 0;
+    line-height:1.6;
+    font-weight:400;
+  }
+
+  /* ---------- WEEK STRIP ---------- */
+  .weekstrip{
+    display:flex;
+    background:var(--white);
+    border-bottom:1px solid var(--gray);
+    overflow-x:auto;
+  }
+  .weekstrip a{
+    flex:1 1 0;
+    min-width:130px;
+    text-decoration:none;
+    text-align:center;
+    padding:16px 8px 14px;
+    border-right:1px solid var(--gray);
+    transition:background .15s ease;
+  }
+  .weekstrip a:last-child{border-right:none;}
+  .weekstrip a:hover{background:#F4F8FC;}
+  .weekstrip .dayname{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--berea-blue);
+    letter-spacing:.02em;
+    margin-top:2px;
+  }
+  .weekstrip .daydate{
+    font-family:'Barlow', sans-serif;
+    font-size:12px;
+    color:var(--black);
+    margin-top:1px;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+  .intro{
+    padding:36px 0 8px;
+    font-size:15px;
+    line-height:1.7;
+    color:#222;
+    border-bottom:1px solid var(--gray);
+    margin-bottom:6px;
+  }
+  .intro .signed{
+    margin-top:18px;
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--berea-blue);
+    line-height:1.9;
+  }
+
+  .cal-cta{
+    max-width:872px;
+    margin:28px auto 0;
+    background:#EAF6FF;
+    border:1px solid var(--light-blue);
+    border-radius:6px;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .cal-cta span{
+    font-size:13.5px;
+    color:#003354;
+  }
+  .cal-cta a{
+    background:var(--berea-blue);
+    color:#fff;
+    text-decoration:none;
+    font-family:'Google Sans Code', monospace;
+    font-size:12px;
+    padding:9px 16px;
+    border-radius:4px;
+    white-space:nowrap;
+  }
+  .cal-cta a:hover{background:#00304f;}
+
+  .flag{
+    margin:28px 0;
+    padding:16px 18px;
+    background:#F4F5EF;
+    border:1px solid var(--blue-gray);
+    border-left:5px solid var(--berea-blue);
+    border-radius:2px;
+    font-size:13.5px;
+    line-height:1.6;
+  }
+  .flag b{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:12px;
+    color:var(--berea-blue);
+    display:block;
+    margin-bottom:6px;
+  }
+
+  /* ---------- DAY SECTION ---------- */
+  .day{
+    scroll-margin-top:20px;
+    padding-top:40px;
+  }
+  .day-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    background:var(--berea-blue);
+    color:var(--white);
+    padding:14px 22px;
+    border-radius:3px;
+  }
+  .day-head .txt h2{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    font-weight:800;
+    letter-spacing:.03em;
+    font-size:26px;
+    margin:0;
+  }
+  .day-head .txt .loc{
+    font-family:'Google Sans Code', monospace;
+    font-size:12px;
+    color:var(--bright-blue);
+    margin-top:2px;
+  }
+
+  .block{margin:26px 0 8px;}
+  .block-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+    flex-wrap:wrap;
+  }
+  .block-time{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    color:var(--berea-blue);
+    text-transform:uppercase;
+    letter-spacing:.02em;
+  }
+  .tag{
+    font-family:'Google Sans Code', monospace;
+    font-size:10.5px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:20px;
+    font-weight:500;
+  }
+  .tag.all{background:#EAF6FF;color:var(--berea-blue);border:1px solid var(--light-blue);}
+  .tag.one{background:#FBFBD8;color:#5c6300;border:1px solid var(--chartreuse);}
+  .tag.aud{background:#EEF3E1;color:var(--green);border:1px solid var(--green);}
+
+  /* stacked (select-all) list */
+  .stack{display:flex;flex-direction:column;gap:10px;}
+  .stack .card{border-left:4px solid var(--light-blue);}
+
+  /* concurrent grid (select-one) */
+  .concurrent{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:12px;
+    position:relative;
+    padding-left:14px;
+    border-left:2px dashed var(--chartreuse);
+  }
+  .concurrent .card{border-left:4px solid var(--chartreuse);}
+  .concurrent .card.expand{grid-column:1 / -1;}
+
+  .card{
+    background:#FAFAFA;
+    border:1px solid var(--gray);
+    border-radius:3px;
+    padding:12px 14px;
+  }
+  .card .time{
+    font-family:'Google Sans Code', monospace;
+    font-size:11px;
+    color:var(--blue-gray);
+    margin-bottom:3px;
+  }
+  .card .title{
+    font-weight:600;
+    font-size:14.5px;
+    line-height:1.35;
+    margin:0 0 5px;
+    color:#111;
+  }
+  .card .meta{
+    font-family:'Google Sans Code', monospace;
+    font-size:11.5px;
+    color:var(--berea-blue);
+    line-height:1.5;
+  }
+  .card .who{
+    font-size:12.5px;
+    color:#333;
+    margin-top:4px;
+    line-height:1.5;
+  }
+  .card .pill{
+    display:inline-block;
+    margin-top:6px;
+    font-family:'Google Sans Code', monospace;
+    font-size:9.5px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    background:var(--green);
+    color:var(--white);
+    padding:2px 7px;
+    border-radius:10px;
+  }
+
+  .card.expand{padding:0;overflow:hidden;}
+  .card.expand summary{
+    padding:12px 14px;
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px 14px;
+  }
+  .card.expand summary > span{min-width:0;}
+  .card.expand summary .title{white-space:normal;}
+  .card.expand summary::-webkit-details-marker{display:none;}
+  .card.expand summary .chevron{
+    font-family:'Google Sans Code', monospace;
+    font-size:11px;
+    color:var(--berea-blue);
+    border:1px solid var(--light-blue);
+    border-radius:20px;
+    padding:2px 9px;
+    white-space:nowrap;
+    background:#EAF6FF;
+  }
+  .card.expand[open] summary .chevron::after{content:"Hide list";}
+  .card.expand summary .chevron::after{content:"View list";}
+  .card.expand .expand-body{
+    padding:2px 14px 16px;
+    border-top:1px solid var(--gray);
+  }
+  .card.expand .expand-intro{
+    font-size:12.5px;
+    color:#333;
+    line-height:1.6;
+    margin:12px 0 12px;
+  }
+  .consult-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:12px;
+  }
+  .consult-table th{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    font-size:11px;
+    text-align:left;
+    color:var(--white);
+    background:var(--berea-blue);
+    padding:7px 10px;
+  }
+  .consult-table td{
+    padding:8px 10px;
+    border-bottom:1px solid var(--gray);
+    vertical-align:top;
+    line-height:1.45;
+  }
+  .consult-table tr:nth-child(even) td{background:#F7F9FB;}
+  .consult-table td.who{font-weight:600;white-space:nowrap;color:#111;}
+  .consult-table td.loc{font-family:'Google Sans Code', monospace;font-size:11px;color:var(--berea-blue);white-space:nowrap;}
+
+  .addcal{
+    display:inline-block;
+    font-family:'Google Sans Code', monospace;
+    font-size:10.5px;
+    letter-spacing:.03em;
+    color:var(--berea-blue);
+    background:#EAF6FF;
+    border:1px solid var(--light-blue);
+    border-radius:20px;
+    padding:3px 10px;
+    text-decoration:none;
+    margin-top:8px;
+    white-space:nowrap;
+  }
+  .addcal:hover{background:var(--light-blue);color:var(--white);}
+  .card .addcal, .stack .card .addcal{display:block;width:fit-content;}
+
+  .weekcal{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--berea-blue);
+    background:var(--white);
+    border:2px solid var(--berea-blue);
+    border-radius:24px;
+    padding:9px 20px;
+    text-decoration:none;
+    margin-top:20px;
+  }
+  .weekcal:hover{background:var(--berea-blue);color:var(--white);}
+
+  footer{
+    margin-top:56px;
+    padding:26px 0 50px;
+    text-align:center;
+    font-family:'Google Sans Code', monospace;
+    font-size:11px;
+    color:var(--blue-gray);
+    border-top:1px solid var(--gray);
+  }
+  footer .rule{width:40px;height:2px;background:var(--chartreuse);margin:0 auto 14px;border:none;}
+
+  @media print{
+    .weekstrip a{color:#000 !important;}
+    .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .day-head{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .day{page-break-inside:avoid;}
+  }
+  @media (max-width:600px){
+    .day-head{flex-direction:column;gap:2px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <svg class="tower tower-left" viewBox="0 0 60 220" xmlns="http://www.w3.org/2000/svg" fill="white"><rect x="20" y="90" width="20" height="130"/><rect x="24" y="60" width="12" height="34"/><polygon points="30,20 40,60 20,60"/><rect x="27" y="8" width="6" height="14"/></svg>
+  <p class="eyebrow">Berea College · Professional Development Week</p>
+  <h1>Many Roles, One Goal:<br>Educating Students Together</h1>
+  <hr class="rule">
+  <p class="sub">August 10–14, 2026</p>
+  <p class="sub2">A union of what was formerly "Launch Week" and The Work College Supervisor Training, brought to you by Academic Affairs and the Work College Program. This week we focus on four connected areas — Teaching, Scholarship, Mentoring, and Workplace Learning.</p>
+  <svg class="tower tower-right" viewBox="0 0 60 220" xmlns="http://www.w3.org/2000/svg" fill="white"><rect x="20" y="90" width="20" height="130"/><rect x="24" y="60" width="12" height="34"/><polygon points="30,20 40,60 20,60"/><rect x="27" y="8" width="6" height="14"/></svg>
+</div>
+
+<div style="text-align:center;background:#F4F8FC;padding:16px 12px;border-bottom:1px solid var(--gray);">
+  <a class="weekcal" href="Many-Roles-One-Goal-PD-Week.ics" download="Many-Roles-One-Goal-PD-Week.ics">Add all 33 sessions to your calendar</a>
+</div>
+
+<nav class="weekstrip">
+  <a href="#mon"><div class="dayname">MON</div><div class="daydate">Aug 10</div></a>
+  <a href="#tue"><div class="dayname">TUE</div><div class="daydate">Aug 11</div></a>
+  <a href="#wed"><div class="dayname">WED</div><div class="daydate">Aug 12</div></a>
+  <a href="#thu"><div class="dayname">THU</div><div class="daydate">Aug 13</div></a>
+  <a href="#fri"><div class="dayname">FRI</div><div class="daydate">Aug 14</div></a>
+</nav>
+
+<div class="cal-cta">
+  <span><strong>Registered for sessions?</strong> Add them to your calendar in one click.</span>
+  <a href="Many-Roles-One-Goal_Add-to-Calendar.html">Add sessions to your calendar</a>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>This year, Launch Week and The Work College Supervisor Training become one shared, campus-wide experience: "Many Roles, One Goal: Educating Students Together" Professional Development Week. Because education at Berea doesn't happen in just one place. It happens in classrooms, offices, studios, shops, labs, and worksites. It happens through teaching, mentoring, scholarship, and work-learning.</p>
+    <p>"Many Roles, One Goal: Educating Students Together" is our opportunity to step back, see the whole picture, and strengthen how we support student growth, belonging, and success—together.</p>
+    <p>We'll focus on four connected areas:<br>
+    <strong>Teaching. Scholarship. Mentoring. Workplace Learning.</strong><br>
+    Whether you're new to Berea or have been here for years, this week is for you.</p>
+    <p>Let's begin the year strong—together.</p>
+    <div class="signed">
+      Sincerely,<br>
+      Sarah Adams, Executive Director of General Education<br>
+      T.J. Albritton, Dean of Community and Commitments<br>
+      Mary Robert Garrett, Associate Provost &amp; Dean of Faculty<br>
+      Shewanee Howard-Baptiste, Provost and Vice President for Academic Affairs<br>
+      Joe Murphy, Director of Educational Development<br>
+      Tuyet Nguyen, Assistant Director of Training and Development<br>
+      Collis Robinson, Dean for the Work College Program<br>
+      Rob Smith, Director of Academic Assessment and Accreditation
+    </div>
+  </div>
+
+  <!-- ================= MONDAY ================= -->
+  <section class="day" id="mon">
+    <div class="day-head">
+      <div class="txt"><h2>Monday, August 10</h2><div class="loc">BT Events Center · Emery · Legacy Hall</div></div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">Morning Sessions — BT Events Center</span><span class="tag all">Attend all that apply</span></div>
+      <div class="stack">
+        <div class="card"><div class="time">8:45 AM</div><div class="title">Welcome</div><div class="who">Led by Mary Robert Garrett &amp; Sarah Adams, with support from the college president and other AC members</div><a class="addcal" href="Mon-Welcome.ics" download="Mon-Welcome.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">9:15 AM</div><div class="title">AC Speed Dating</div><div class="who">Led by Mary Robert Garrett &amp; Collis Robinson, with support from other college AC members</div><a class="addcal" href="Mon-AC-Speed-Dating.ics" download="Mon-AC-Speed-Dating.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">10:30 AM</div><div class="title">Getting to Know Our Newest Students</div><div class="who">Led by Luke Hodson &amp; Jessica Pena</div><a class="addcal" href="Mon-Newest-Students.ics" download="Mon-Newest-Students.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">11:45 AM</div><div class="title">Lunch — at Tavern</div><a class="addcal" href="Mon-Lunch.ics" download="Mon-Lunch.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">1:00 PM Sessions</span><span class="tag one">Choose one · concurrent</span></div>
+      <div class="concurrent">
+        <div class="card"><div class="title">The First Two Weeks of Class</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by Joe Murphy</div><a class="addcal" href="Mon-First-Two-Weeks.ics" download="Mon-First-Two-Weeks.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">Scholarship: Grant Applications &amp; Sabbatical Planning</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by Mary Robert Garrett &amp; Grant Services</div><a class="addcal" href="Mon-Scholarship-Grants.ics" download="Mon-Scholarship-Grants.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">Getting to Know WLS</div><div class="meta">Legacy Hall</div><div class="who">Led by (TBD)</div><a class="addcal" href="Mon-Getting-to-Know-WLS.ics" download="Mon-Getting-to-Know-WLS.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">AI &amp; Workflow</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by Rob Smith</div><a class="addcal" href="Mon-AI-Workflow.ics" download="Mon-AI-Workflow.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TUESDAY ================= -->
+  <section class="day" id="tue">
+    <div class="day-head">
+      <div class="txt"><h2>Tuesday, August 11</h2><div class="loc">BT Events Center · Emery</div></div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">Morning Sessions — BT Events Center</span><span class="tag all">Attend all that apply</span></div>
+      <div class="stack">
+        <div class="card"><div class="time">8:45 AM</div><div class="title">Frank Welcome &amp; Network of Care</div><div class="who">Led by Student Affairs</div><a class="addcal" href="Tue-Frank-Welcome.ics" download="Tue-Frank-Welcome.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">10:45 AM</div><div class="title">Disability &amp; Accessibility</div><div class="who">Led by Holly Hatfield</div><a class="addcal" href="Tue-Disability-Accessibility.ics" download="Tue-Disability-Accessibility.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">11:15 AM</div><div class="title">Title IX</div><div class="who">Led by Joslyn Glover</div><a class="addcal" href="Tue-Title-IX.ics" download="Tue-Title-IX.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">11:45 AM</div><div class="title">Lunch &amp; WLS Keynote</div><div class="who">Led by Collis Robinson</div><a class="addcal" href="Tue-Lunch-Keynote.ics" download="Tue-Lunch-Keynote.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">1:00 PM Sessions</span><span class="tag one">Choose one · concurrent</span></div>
+      <div class="concurrent">
+        <div class="card"><div class="title">Assessment: How Do I Know If It's Working?</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by Rob Smith &amp; Clara Chapman</div><a class="addcal" href="Tue-Assessment.ics" download="Tue-Assessment.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">IRB Approval &amp; Process</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by Dee Hill-Zuganelli &amp; Mary Robert Garrett</div><a class="addcal" href="Tue-IRB-Approval.ics" download="Tue-IRB-Approval.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">IT Showcase: Emerging Technology in the Classroom</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by John Hargrave</div><a class="addcal" href="Tue-IT-Showcase.ics" download="Tue-IT-Showcase.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WEDNESDAY ================= -->
+  <section class="day" id="wed">
+    <div class="day-head">
+      <div class="txt"><h2>Wednesday, August 12</h2><div class="loc">BT Events Center · Legacy · Emery · Alumni Building</div></div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">8:45 AM Sessions</span><span class="tag one">Choose one · concurrent</span></div>
+      <div class="concurrent">
+        <div class="card"><div class="title">Department Chairs Meeting</div><div class="meta">BT Events Center</div><div class="who">Led by Mary Robert Garrett</div><span class="pill">Dept. chairs only</span><a class="addcal" href="Wed-Dept-Chairs-Meeting.ics" download="Wed-Dept-Chairs-Meeting.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">Nuts &amp; Bolts: Work College Program Supervision</div><div class="meta">Legacy Hall</div><div class="who">Led by Collis Robinson &amp; Tuyet Nguyen</div><a class="addcal" href="Wed-Nuts-and-Bolts.ics" download="Wed-Nuts-and-Bolts.ics">+ Add to calendar</a></div>
+        <details class="card expand">
+          <summary>
+            <span><span class="title" style="margin:0;">Partnership Consulting Hours</span></span>
+            <span style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;">
+              <a class="addcal" href="Wed-Partnership-Consulting-Hours.ics" download="Wed-Partnership-Consulting-Hours.ics" onclick="event.stopPropagation();">+ Add to calendar</a>
+              <span class="chevron"></span>
+            </span>
+          </summary>
+          <div class="expand-body">
+            <p class="expand-intro">A variety of folks from across campus are opening their doors to faculty and staff who might have a question or would like to explore a possible partnership. 8:45 AM&ndash;12:00 PM.</p>
+            <table class="consult-table">
+              <thead><tr><th>Chat with…</th><th>About…</th><th>By visiting…</th></tr></thead>
+              <tbody>
+                <tr><td class="who">Joe Murphy</td><td>Course design for active, engaged learning</td><td class="loc">Draper 102D</td></tr>
+                <tr><td class="who">Dr. Kelsey</td><td>How to integrate experiential learning and object-based teaching into your courses using the College's vast permanent art collection</td><td class="loc">Room 207, Rogers-Traylor Art Building</td></tr>
+                <tr><td class="who">Internships &amp; Career Development</td><td>Supporting students through career discernment, exploration, and their eventual hiring</td><td class="loc">Hutchins Library coffeeshop</td></tr>
+                <tr><td class="who">Heather Schill</td><td>How to streamline your department's processes</td><td class="loc">Hutchins Library coffeeshop</td></tr>
+                <tr><td class="who">Janna Norton</td><td>Exploring corporate relationships to enhance learning experiences</td><td class="loc">2nd floor café area, Legacy Hall</td></tr>
+                <tr><td class="who">Grant Services</td><td>Finding, applying for, and managing grants</td><td class="loc">2nd floor café area, Legacy Hall</td></tr>
+                <tr><td class="who">Emily Hilliard</td><td>How to engage in oral history projects or incorporate a folk arts/culture experience into your class or other folklife-related projects and programs</td><td class="loc">Hutchins Library 130</td></tr>
+                <tr><td class="who">Amanda Peach</td><td>Redesigning research assignments to better utilize library resources, student research consultations, and information literacy instruction</td><td class="loc">Hutchins Library Flex Space</td></tr>
+                <tr><td class="who">Jade Stiles</td><td>Collaborating with Hutchins on student engagement and programming, student research consultations, and information literacy instruction</td><td class="loc">Hutchins Library Flex Space</td></tr>
+                <tr><td class="who">Jana Redmond</td><td>Collaborating on ways to support the research needs of STEM and Nursing/Health Science students, student research consultations, and information literacy instruction</td><td class="loc">Hutchins Library Flex Space</td></tr>
+                <tr><td class="who">Angel Rivera</td><td>Scheduling library instruction, reserving display space, student research consultations, and overall information literacy instruction</td><td class="loc">Hutchins Library Flex Space</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">11:45 AM Lunch Sessions</span><span class="tag one">Choose one · concurrent</span></div>
+      <div class="concurrent">
+        <div class="card"><div class="title">Lunch for Work College Program Supervisors</div><div class="meta">Legacy Building</div><a class="addcal" href="Wed-Lunch-Supervisors.ics" download="Wed-Lunch-Supervisors.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">Lunch for Department Chairs</div><div class="meta">Alumni Building, Hutchins Dining Room</div><div class="who">Sign in upon entry to dining services</div><a class="addcal" href="Wed-Lunch-Dept-Chairs.ics" download="Wed-Lunch-Dept-Chairs.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">1:00 PM Sessions</span><span class="tag one">Choose one · concurrent</span></div>
+      <div class="concurrent">
+        <div class="card"><div class="title">Continuing Supervisors Refresh</div><div class="meta">Legacy Building</div><div class="who">Led by Brittany Ash &amp; Armando Buenrostro</div><a class="addcal" href="Wed-Supervisors-Refresh.ics" download="Wed-Supervisors-Refresh.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">Training Your AI</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by Rob Smith</div><a class="addcal" href="Wed-Training-Your-AI.ics" download="Wed-Training-Your-AI.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">International: Drafting a BIST Proposal</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by CIE Staff</div><a class="addcal" href="Wed-BIST-Proposal.ics" download="Wed-BIST-Proposal.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">Tenure &amp; Promotion Portfolio Prep</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by Mary Robert Garrett</div><a class="addcal" href="Wed-Tenure-Promotion-Prep.ics" download="Wed-Tenure-Promotion-Prep.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THURSDAY ================= -->
+  <section class="day" id="thu">
+    <div class="day-head">
+      <div class="txt"><h2>Thursday, August 13</h2><div class="loc">BT Events Center · Library · Legacy · Emery</div></div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">Morning Sessions — BT Events Center</span><span class="tag all">Attend all that apply</span></div>
+      <div class="stack">
+        <div class="card"><div class="time">8:45 AM</div><div class="title">TJ Welcome &amp; Community Session</div><div class="who">Led by TJ Albritton &amp; Erica Woods</div><a class="addcal" href="Thu-TJ-Welcome.ics" download="Thu-TJ-Welcome.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">10:30 AM</div><div class="title">Introducing the NEST</div><div class="who">Led by Tréon McClendon &amp; Katie Stewart</div><a class="addcal" href="Thu-Introducing-the-NEST.ics" download="Thu-Introducing-the-NEST.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">11:45 AM</div><div class="title">Lunch</div><div class="who">Hosted by Internships &amp; Career Development</div><a class="addcal" href="Thu-Lunch.ics" download="Thu-Lunch.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">1:00 PM Sessions</span><span class="tag one">Choose one · concurrent</span></div>
+      <div class="concurrent">
+        <div class="card"><div class="title">Library Resources &amp; Instruction</div><div class="meta">Library</div><div class="who">Led by Library staff</div><a class="addcal" href="Thu-Library-Resources.ics" download="Thu-Library-Resources.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">WLS Learning Outcomes</div><div class="meta">Legacy Building</div><div class="who">Led by Tuyet Nguyen &amp; Brad Powell</div><a class="addcal" href="Thu-WLS-Learning-Outcomes.ics" download="Thu-WLS-Learning-Outcomes.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">One Voice, One Vision: Building a Unified Advising Experience</div><div class="meta">Emery, 1st Floor (follow signs)</div><div class="who">Led by Mary Robert Garrett &amp; Tréon McClendon</div><a class="addcal" href="Thu-One-Voice-One-Vision.ics" download="Thu-One-Voice-One-Vision.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="title">AI &amp; Work</div><div class="meta">Legacy Hall</div><div class="who">Led by Steve Albritton, AI Integration Specialist</div><a class="addcal" href="Thu-AI-and-Work.ics" download="Thu-AI-and-Work.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FRIDAY ================= -->
+  <section class="day" id="fri">
+    <div class="day-head">
+      <div class="txt"><h2>Friday, August 14</h2><div class="loc">Hutchins Library Flex · Morning only</div></div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="block-time">Morning Sessions — Hutchins Library Flex</span><span class="tag all">Attend all that apply</span></div>
+      <div class="stack">
+        <div class="card"><div class="time">8:45 AM</div><div class="title">Help Set COGE's Agenda</div><div class="who">Led by Sarah Adams</div><a class="addcal" href="Fri-COGE-Agenda.ics" download="Fri-COGE-Agenda.ics">+ Add to calendar</a></div>
+        <div class="card"><div class="time">10:00 AM</div><div class="title">L&amp;I 100</div><div class="who">Led by Sarah Adams</div><a class="addcal" href="Fri-L-and-I-100.ics" download="Fri-L-and-I-100.ics">+ Add to calendar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <hr class="rule">
+    Many Roles, One Goal: Educating Students Together · Berea College · August 10–14, 2026<br>
+    Compiled from the official PD Week registration form
+  </footer>
+
+</div>
+</body>
+</html>
